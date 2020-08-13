@@ -1,0 +1,18 @@
+Title : <%= @film.title %></br>
+Year  : <%= @film.year %></br>
+Description  : <%= @film.description %>
+</br>
+</br>
+<button><%= link_to "Back", films_path %></button>
+
+<% 
+d = Time.now
+
+case d
+ when @film.year == d.strftime("%Y")
+ @film.title 
+end
+
+%>
+
+<%= render 'info', popular_film: d %>

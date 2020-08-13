@@ -1,0 +1,29 @@
+<%# if @film.errors.any? %>
+ <%# @film.errors.full_messages.each do |msg| %>
+ 	
+ 		<%# msg %>
+ 	
+ <%# end %>
+<%# end %>
+
+<%= form_for(@film) do |n| %>
+	<%= n.label :title %></br>
+	<% if @film.errors[:title].any? %>
+		<%= @film.errors[:title].first %>
+	<% end %>
+	<%= n.text_field :title %></br>
+	</br>
+
+	<%= n.label :year %></br>
+	<%= n.text_field :year %></br>
+	</br>
+
+	<%= n.label :description %></br>
+	<% if @film.errors[:description].any? %>
+		<%= @film.errors[:description].first %>
+	<% end %>
+	<%= n.text_area :description %></br>
+	</br>
+
+	<%= n.submit "Simpan" %>
+<% end %>
